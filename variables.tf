@@ -1,8 +1,9 @@
 variable "my_region" {
   type        = string
-  default     = "us-east-1"
+  default     = "us-west-1"
   description = "enter the region of your choice"
 }
+
 
 variable "vpc_cidr" {
   type        = string

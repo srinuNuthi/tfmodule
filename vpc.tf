@@ -1,16 +1,3 @@
-terraform {
-  required_providers {
-    aws = {
-      source  = "hashicorp/aws"
-      version = "~> 5.0"
-    }
-  }
-}
-
-provider "aws" {
-  region = var.my_region
-}
-
 resource "aws_vpc" "trailvpc" {
   cidr_block = var.vpc_cidr
 }
@@ -106,7 +93,5 @@ resource "aws_route_table_association" "pvtSubnetAssociation" {
   subnet_id      = element(data.aws_subnets.pvtSubnets.ids, count.index)
   route_table_id = aws_route_table.pvtRt.id
 }
-
-
 
 
